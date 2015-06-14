@@ -18,34 +18,47 @@
 
 function freqChars(input) {
 
-	if(input === 0)
-		return 0;
+	if(input === null)
+		return null;
 
 	var counters = {};
 
 	for(var i = 0; i < input.length; i++) {
 		var temp = input[i];
 		
-		if(counters[temp] === 0) {
-			temp = 1;
+		if(temp in counters) {
+			counters[temp]++;
 		} else {
-			temp++;
+			counters[temp] = 1;
 		}
 	}
-	//At this point counters object will have index char and count;
+	
+	console.log(counters);
 
-	var output_array = [];
-	for(var i in counters) {
-		var temp_array = i + ',' + counters[i];
-		output_array.push(temp_array);
-	}
+    
+    var outputArray = [];
+    
+    for(var i in counters) {
+        var temp = [];
+        temp.push(i);
+        temp.push(counters[i]);
+        outputArray.push(temp);
+        
+    }
+    
+	
+	
+	
 
-	return temp_array;
+
+	return outputArray;
 }
 
 var input = prompt("Enter input array");
 
 console.log(input);
+console.log(freqChars(input));
+
 
 
 

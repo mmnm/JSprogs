@@ -20,15 +20,16 @@ function longestSeq(input) {
 
 		if(prev === 0) {
 			prev = input[i];
-			best_length++;
-			continue;
-		}
-	
-		if(prev === input[i]) {
-			prev_length++;
-		} else {
-			prev = input[i];
 			prev_length = 1;
+			//continue;
+		} else {
+	
+			if(prev === input[i]) {
+				prev_length++;
+			} else {
+				prev = input[i];
+				prev_length = 1;
+			}
 		}
 
 		if(best_length < prev_length) {
