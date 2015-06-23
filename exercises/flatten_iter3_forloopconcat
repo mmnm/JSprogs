@@ -1,0 +1,21 @@
+
+
+function flatten(collection){
+	var output = [];
+
+	for (var i = 0; i < collection.length; i++) {
+		if(Array.isArray(collection[i])){
+			output = output.concat(flatten(collection[i]));
+			
+		}else{
+			output = output.concat(collection[i]);
+		}
+	}
+
+	return output;
+}
+
+var abc = [1,[2,3,[4,5,[9,11],13,18],21,[23,27],31],11];
+var def = [1,[2,3],4];
+console.log(flatten(abc));
+console.log(flatten(def));
