@@ -14,6 +14,6 @@ function reduce(collection, accumulator, callback){
 	return accumulator;
 }
 
-console.log(reduce([1, 2], 13, function(total, n) {
+console.log(reduce([3, 2], 13, function(total, n) {
   return total * n;
 }));

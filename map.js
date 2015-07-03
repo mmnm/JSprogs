@@ -27,5 +27,19 @@ function map (collection, callback) {
 var abc = [2, 4, 9];
 console.log(map(abc, multiply3));
 
+function zip_using_map_demo(collection1, collection2){
+	var output = [];
+	output = map(collection1, function(i){
+		return [collection1[i], collection2[i]];
+	});
+
+	return output;
+}
+
+var var1_zip = [1,2,3];
+var var2_zip = [5,6,7];
+console.log(zip_using_map_demo(var1_zip,var2_zip));
+
+
 
 
