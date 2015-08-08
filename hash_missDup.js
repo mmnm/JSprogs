@@ -42,15 +42,14 @@ Examples:
   	};
   
   	var outputArr = [];
-  	var dupHasbeenput = false;
   	for (var i = low; i <= high; i++) {
   		if(typeof isSeenCount[i] === "undefined") {
   			outputArr.push(i);
   		} else if(isSeenCount[i] > 1) {
-  			if(dupHasbeenput == false){
-  				outputArr.push(i);	
-  				dupHasbeenput = true;
-  			}
+  			
+  			outputArr.push(i);	
+  			dupHasbeenput = true;
+  			
   		}
   	}
 
